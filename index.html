@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeStart — онлайн-школа программирования</title>
+  <link rel="stylesheet" href="\styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="brand-name">CodeStart</div>
+        </div>
+        
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="#courses">Наши курсы</a>
+          <a href="\about.html">О школе</a>
+          <a href="#testimonials">Отзывы</a>
+          <a href="#support">Поддержка</a>
+          <a href="\account.html" class="nav-highlight">
+            <i class="fas fa-user-circle"></i> Личный кабинет
+          </a>
+        </nav>
+        
+        <button class="mobile-menu-btn" aria-label="Открыть меню">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Герой-секция -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1 class="hero-title">CodeStart — это онлайн-школа для начинающих и продвинутых программистов</h1>
+            <p class="hero-description">Мы предлагаем курсы по языкам программирования, инструментам разработки и современным технологиям. Выберите программу — от коротких курсов до профессиональных программ с поддержкой трудоустройства.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary">
+                <i class="fas fa-rocket"></i> Начать обучение
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fas fa-info-circle"></i> О платформе
+              </button>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">1500+</span>
+                <span class="stat-label">студентов</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">курсов</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">трудоустройство</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-visual" aria-hidden="true">
+            <div class="laptop">
+              <div class="laptop-screen">
+                <div class="code-editor">
+                  <div class="code-editor-header">
+                    <div class="code-editor-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="code-editor-title">
+                     <link rel="stylesheet" href="\script.js"> 
+                    </div>
+                  </div>
+                  <div class="code-editor-content">
+                    <pre><code>// Добро пожаловать в CodeStart
+function learnToCode() {
+  const success = practice + consistency;
+  return success;
+}
+
+const yourFuture = learnToCode();</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="layout">
+        <!-- Боковая панель с фильтрами -->
+        <aside class="filters" aria-label="Фильтры курсов">
+          <h3 class="filters-title">Фильтры курсов</h3>
+          
+          <div class="filter-group">
+            <h4 class="filter-group-title">Тип обучения</h4>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="type" value="any" checked>
+                <span class="radio-custom"></span>
+                Любой
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="type" value="profession">
+                <span class="radio-custom"></span>
+                Профессия
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="type" value="course">
+                <span class="radio-custom"></span>
+                Курс
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <h4 class="filter-group-title">Дополнительные опции</h4>
+            <label class="checkbox-label">
+              <input type="checkbox" id="with-job">
+              <span class="checkbox-custom"></span>
+              Только с трудоустройством
+            </label>
+          </div>
+          
+          <div class="filter-group">
+            <h4 class="filter-group-title">
+              Длительность
+              <span id="duration-value" class="filter-value">6 мес</span>
+            </h4>
+            <div class="range-slider">
+              <input id="duration-slider" type="range" min="1" max="24" value="6" class="slider">
+              <div class="range-labels">
+                <span>1 мес</span>
+                <span>24 мес</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <h4 class="filter-group-title">Языки программирования</h4>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="python">
+                <span class="checkbox-custom"></span>
+                Python
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="js">
+                <span class="checkbox-custom"></span>
+                JavaScript
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="php">
+                <span class="checkbox-custom"></span>
+                PHP
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="sql">
+                <span class="checkbox-custom"></span>
+                SQL
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="java">
+                <span class="checkbox-custom"></span>
+                Java
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="lang" value="cpp">
+                <span class="checkbox-custom"></span>
+                C++
+              </label>
+            </div>
+          </div>
+          
+          <div class="filter-buttons">
+            <button id="apply-filters" class="btn btn-primary btn-block">
+              <i class="fas fa-filter"></i> Применить фильтры
+            </button>
+            <button id="reset-filters" class="btn btn-outline btn-block">
+              <i class="fas fa-redo"></i> Сбросить
+            </button>
+          </div>
+          
+          <div class="filter-info">
+            <p><i class="fas fa-info-circle"></i> Используйте фильтры для поиска подходящего курса</p>
+          </div>
+        </aside>
+        
+        <!-- Основной контент с курсами -->
+        <section class="courses-section" id="courses">
+          <div class="courses-header">
+            <div>
+              <h2 class="section-title">Наши курсы</h2>
+              <p class="section-subtitle">Подберите программу, соответствующую вашим целям</p>
+            </div>
+            <div class="courses-controls">
+              <div class="dropdown">
+                <button class="btn btn-outline dropdown-toggle">
+                  <i class="fas fa-sort-amount-down"></i> Сортировать
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#" data-sort="popular">По популярности</a>
+                  <a href="#" data-sort="price-asc">По цене (сначала дешевле)</a>
+                  <a href="#" data-sort="price-desc">По цене (сначала дороже)</a>
+                  <a href="#" data-sort="duration">По длительности</a>
+                </div>
+              </div>
+              <div class="courses-count">
+                Найдено: <span id="courses-count">0</span> курсов
+              </div>
+            </div>
+          </div>
+          
+          <div class="courses-grid" id="courses-grid">
+            <!-- Курсы будут загружены через JavaScript -->
+          </div>
+          
+          <div class="courses-empty" id="no-courses-message">
+            <div class="empty-state">
+              <i class="fas fa-search empty-icon"></i>
+              <h3>Курсы не найдены</h3>
+              <p>Попробуйте изменить параметры фильтрации</p>
+              <button id="reset-filters-main" class="btn btn-primary">
+                <i class="fas fa-redo"></i> Сбросить фильтры
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    
+<!-- Отзывы -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Каждый может освоить программирование с нуля</h2>
+      <p class="section-subtitle">Истории успеха наших студентов</p>
+    </div>
+    
+    <div class="testimonials-carousel">
+      <button class="carousel-btn prev-btn" aria-label="Предыдущий">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- 3 отзыва с фото -->
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://avangardteplo.ru/upload/iblock/383/12ypawrmhbkjuggnc6lbek20hakyf2pb.jpg" alt="Егор Петров" width="70">
+            </div>
+            <div class="testimonial-author">
+              <h4>Егор Петров</h4>
+              <p>Бывший бухгалтер</p>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-body">
+            <p>"Оставил скучную работу, освоил программирование и получил новую профессию. ЗП в 2 раза выше!"</p>
+          </div>
+          <div class="testimonial-footer">
+            <span class="course-tag">Курс: 1C разработчик</span>
+            <span class="result-tag">Трудоустроен</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://avangardteplo.ru/upload/iblock/7b1/neqpclse8zujlmc9plkw65cooxjpfmb3.png" alt="Татьяна Волкова" width="70">
+            </div>
+            <div class="testimonial-author">
+              <h4>Татьяна Волкова</h4>
+              <p>Студентка</p>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="testimonial-body">
+            <p>"С нуля освоила фронтенд-разработку. Получила стажировку, а через 3 месяца — полноценную позицию junior!"</p>
+          </div>
+          <div class="testimonial-footer">
+            <span class="course-tag">Курс: Frontend-разработчик</span>
+            <span class="result-tag">Стажировка</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://avangardteplo.ru/upload/iblock/411/r40dz2ew70mq42otmgftpl7v6qjces24.png" alt="Андрей Семенов" width="70">
+            </div>
+            <div class="testimonial-author">
+              <h4>Андрей Семенов</h4>
+              <p>Бывший врач</p>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-body">
+            <p>"В 35 лет сменил профессию. Прошел курс Python-разработчика. Теперь работаю в финтех-компании!"</p>
+          </div>
+          <div class="testimonial-footer">
+            <span class="course-tag">Курс: Python-разработчик</span>
+            <span class="result-tag">Трудоустроен</span>
+          </div>
+        </article>
+      </div>
+      
+      <button class="carousel-btn next-btn" aria-label="Следующий">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Форма для вопросов -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-content">
+            <h2 class="contact-title">Остались вопросы?</h2>
+            <p class="contact-description">Если вы хотите больше узнать о CodeStart или не знаете, какую программу выбрать — оставьте заявку, и мы перезвоним в течение 15 минут.</p>
+            <div class="contact-features">
+              <div class="feature">
+                <i class="fas fa-clock"></i>
+                <span>Консультация 15 минут</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Помощь в выборе курса</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-percentage"></i>
+                <span>Скидка 10% при записи</span>
+              </div>
+            </div>
+          </div>
+          
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Иван Иванов" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact">Телефон или email</label>
+              <input type="text" id="contact" placeholder="+7 (900) 123-45-67 или email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="question">Ваш вопрос (необязательно)</label>
+              <textarea id="question" placeholder="Расскажите, что вас интересует..."></textarea>
+            </div>
+            
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-paper-plane"></i> Оставить заявку
+              </button>
+              <p class="form-notice">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Улучшенный подвал -->
+  <footer class="footer" id="support">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="footer-brand-name">CodeStart</div>
+          </div>
+          <p class="footer-description">Онлайн-школа программирования с 2020 года. Помогаем начинающим и опытным разработчикам получить новые навыки и найти работу.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="ВКонтакте">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a href="#" aria-label="Telegram">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Курсы</h3>
+          <ul class="footer-links">
+            <li><a href="#">Все курсы</a></li>
+            <li><a href="#">Для начинающих</a></li>
+            <li><a href="#">Профессии</a></li>
+            <li><a href="#">Интенсивы</a></li>
+            <li><a href="#">Бесплатные материалы</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">О школе</h3>
+          <ul class="footer-links">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Преподаватели</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Блог</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Контакты</h3>
+          <div class="footer-contacts">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <div class="contact-label">Телефон</div>
+                <a href="tel:+71234567890">+7 (123) 456-78-90</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:info@codestart.example">info@codestart.example</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <div class="contact-label">Режим работы</div>
+                <div>Пн-Пт: 9:00-21:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2023 CodeStart. Все права защищены.
+        </div>
+        
+        <div class="footer-legal">
+          <a href="#">Пользовательское соглашение</a>
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Публичная оферта</a>
+        </div>
+        
+        <div class="footer-payment">
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa" title="Visa"></i>
+            <i class="fab fa-cc-mastercard" title="MasterCard"></i>
+            <i class="fab fa-cc-paypal" title="PayPal"></i>
+            <i class="fas fa-credit-card" title="Банковская карта"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-back-to-top">
+        <button id="back-to-top" class="btn btn-outline">
+          <i class="fas fa-chevron-up"></i> Наверх
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-course-title">Название курса</h3>
+        <button class="modal-close" id="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-course-details">
+        <!-- Данные о курсе будут вставлены сюда -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="modal-close-btn">Закрыть</button>
+        <button class="btn btn-primary" id="modal-enroll-btn">Записаться на курс</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="\script.js"></script>
+</body>
+</html>

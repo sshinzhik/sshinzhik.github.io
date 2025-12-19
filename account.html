@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — CodeStart</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="account.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👤</text></svg>">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <a href="index.html" class="brand-link">
+            <div class="logo">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="brand-name">CodeStart</div>
+          </a>
+        </div>
+        
+        <nav class="nav" aria-label="Главная навигация">
+          <a href="index.html">Наши курсы</a>
+          <a href="index.html#about">О школе</a>
+          <a href="index.html#testimonials">Отзывы</a>
+          <a href="index.html#support">Поддержка</a>
+          <a href="account.html" class="nav-highlight active">
+            <i class="fas fa-user-circle"></i> Личный кабинет
+          </a>
+        </nav>
+        
+        <button class="mobile-menu-btn" aria-label="Открыть меню">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main account-main">
+    <div class="container">
+      <!-- Переключение между вкладками регистрации/авторизации -->
+      <div class="account-tabs" id="account-tabs">
+        <button class="tab-btn active" data-tab="login">Вход</button>
+        <button class="tab-btn" data-tab="register">Регистрация</button>
+      </div>
+
+      <!-- Форма входа -->
+      <div class="account-form active" id="login-form">
+        <div class="form-header">
+          <h2>Вход в личный кабинет</h2>
+          <p>Введите свои данные для доступа к курсам и прогрессу</p>
+        </div>
+        
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="login-email" placeholder="example@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="login-password">Пароль</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="login-password" placeholder="Введите пароль" required>
+              <button type="button" class="password-toggle">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input type="checkbox" id="remember-me">
+                <span class="checkbox-custom"></span>
+                Запомнить меня
+              </label>
+              <a href="#" id="forgot-password" class="text-link">Забыли пароль?</a>
+            </div>
+          </div>
+          
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-sign-in-alt"></i> Войти
+            </button>
+            
+            <div class="divider">
+              <span>или войти через</span>
+            </div>
+            
+            <div class="social-login">
+              <button type="button" class="social-btn google">
+                <i class="fab fa-google"></i> Google
+              </button>
+              <button type="button" class="social-btn vk">
+                <i class="fab fa-vk"></i> ВКонтакте
+              </button>
+              <button type="button" class="social-btn github">
+                <i class="fab fa-github"></i> GitHub
+              </button>
+            </div>
+            
+            <p class="form-notice">
+              Нет аккаунта? 
+              <a href="#" class="text-link" id="switch-to-register">Зарегистрироваться</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Форма регистрации -->
+      <div class="account-form" id="register-form">
+        <div class="form-header">
+          <h2>Регистрация аккаунта</h2>
+          <p>Создайте аккаунт для доступа ко всем возможностям платформы</p>
+        </div>
+        
+        <form id="registerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="register-name">Имя</label>
+              <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+                <input type="text" id="register-name" placeholder="Иван" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="register-surname">Фамилия</label>
+              <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+                <input type="text" id="register-surname" placeholder="Иванов" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="register-email" placeholder="example@email.com" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="register-password">Пароль</label>
+              <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="register-password" placeholder="Создайте пароль" required>
+                <button type="button" class="password-toggle">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-strength" id="password-strength">
+                <div class="strength-bar"></div>
+                <div class="strength-text">Надежность пароля: <span>слабый</span></div>
+              </div>
+              <ul class="password-requirements">
+                <li data-requirement="length">Минимум 8 символов</li>
+                <li data-requirement="uppercase">Заглавная буква</li>
+                <li data-requirement="number">Хотя бы одна цифра</li>
+                <li data-requirement="special">Специальный символ</li>
+              </ul>
+            </div>
+            
+            <div class="form-group">
+              <label for="register-confirm-password">Подтверждение пароля</label>
+              <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="register-confirm-password" placeholder="Повторите пароль" required>
+                <button type="button" class="password-toggle">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-match" id="password-match">
+                <i class="fas fa-check"></i> Пароли совпадают
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-phone">Телефон (необязательно)</label>
+            <div class="input-with-icon">
+              <i class="fas fa-phone"></i>
+              <input type="tel" id="register-phone" placeholder="+7 (900) 123-45-67">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-goal">Цель обучения</label>
+            <div class="input-with-icon">
+              <i class="fas fa-bullseye"></i>
+              <select id="register-goal">
+                <option value="" selected disabled>Выберите цель</option>
+                <option value="career">Смена профессии</option>
+                <option value="skills">Повышение квалификации</option>
+                <option value="hobby">Хобби/интерес</option>
+                <option value="startup">Создание стартапа</option>
+                <option value="freelance">Фриланс</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="newsletter" checked>
+              <span class="checkbox-custom"></span>
+              Получать новости и акции на email
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label required">
+              <input type="checkbox" id="terms" required>
+              <span class="checkbox-custom"></span>
+              Я соглашаюсь с 
+              <a href="#" class="text-link">пользовательским соглашением</a> 
+              и 
+              <a href="#" class="text-link">политикой конфиденциальности</a>
+            </label>
+          </div>
+          
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-user-plus"></i> Зарегистрироваться
+            </button>
+            
+            <p class="form-notice">
+              Уже есть аккаунт? 
+              <a href="#" class="text-link" id="switch-to-login">Войти</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Личный кабинет (скрыт по умолчанию) -->
+      <div class="account-dashboard" id="account-dashboard">
+        <!-- Заголовок кабинета -->
+        <div class="dashboard-header">
+          <div class="user-info">
+            <div class="user-avatar" id="user-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div>
+              <h1>Добро пожаловать, <span id="user-name">Иван Иванов</span>!</h1>
+              <p class="user-email" id="user-email">ivan@example.com</p>
+              <div class="user-stats">
+                <span class="stat">
+                  <i class="fas fa-graduation-cap"></i>
+                  <strong id="user-courses-count">3</strong> курса
+                </span>
+                <span class="stat">
+                  <i class="fas fa-clock"></i>
+                  <strong id="user-progress">42</strong>% прогресс
+                </span>
+                <span class="stat">
+                  <i class="fas fa-certificate"></i>
+                  <strong id="user-certificates">1</strong> сертификат
+                </span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-outline" id="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Выйти
+          </button>
+        </div>
+
+        <!-- Навигация в кабинете -->
+        <div class="dashboard-nav">
+          <button class="dashboard-nav-btn active" data-section="courses">
+            <i class="fas fa-graduation-cap"></i> Мои курсы
+          </button>
+          <button class="dashboard-nav-btn" data-section="progress">
+            <i class="fas fa-chart-line"></i> Прогресс
+          </button>
+          <button class="dashboard-nav-btn" data-section="certificates">
+            <i class="fas fa-award"></i> Сертификаты
+          </button>
+          <button class="dashboard-nav-btn" data-section="payments">
+            <i class="fas fa-credit-card"></i> Платежи
+          </button>
+          <button class="dashboard-nav-btn" data-section="settings">
+            <i class="fas fa-cog"></i> Настройки
+          </button>
+        </div>
+
+        <!-- Содержимое разделов -->
+        <div class="dashboard-content">
+          <!-- Раздел "Мои курсы" -->
+          <div class="dashboard-section active" id="courses-section">
+            <div class="section-header">
+              <h2>Мои курсы</h2>
+              <button class="btn btn-primary" id="add-course-btn">
+                <i class="fas fa-plus"></i> Добавить курс
+              </button>
+            </div>
+            
+            <div class="courses-list" id="user-courses-list">
+              <!-- Курсы будут загружены через JS -->
+            </div>
+          </div>
+
+          <!-- Раздел "Прогресс" -->
+          <div class="dashboard-section" id="progress-section">
+            <div class="section-header">
+              <h2>Мой прогресс обучения</h2>
+            </div>
+            
+            <div class="progress-overview">
+              <div class="progress-chart">
+                <div class="chart-container">
+                  <canvas id="progress-chart"></canvas>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color" style="background-color: #0043FF;"></span>
+                    <span>Завершено: <strong id="progress-completed">42%</strong></span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color" style="background-color: #2db24a;"></span>
+                    <span>В процессе: <strong id="progress-in-progress">35%</strong></span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color" style="background-color: #ffc107;"></span>
+                    <span>Не начато: <strong id="progress-not-started">23%</strong></span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="progress-stats">
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-fire"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value" id="streak-days">7</div>
+                    <div class="stat-label">дней подряд</div>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value" id="total-hours">156</div>
+                    <div class="stat-label">часов обучения</div>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value" id="completed-lessons">24</div>
+                    <div class="stat-label">уроков завершено</div>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value" id="learning-days">45</div>
+                    <div class="stat-label">дней с начала</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="recent-activity">
+              <h3>Последняя активность</h3>
+              <div class="activity-list" id="activity-list">
+                <!-- Активности будут загружены через JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Раздел "Сертификаты" -->
+          <div class="dashboard-section" id="certificates-section">
+            <div class="section-header">
+              <h2>Мои сертификаты</h2>
+            </div>
+            
+            <div class="certificates-grid" id="certificates-grid">
+              <!-- Сертификаты будут загружены через JS -->
+            </div>
+            
+            <div class="empty-state" id="no-certificates">
+              <i class="fas fa-award empty-icon"></i>
+              <h3>Сертификатов пока нет</h3>
+              <p>Завершите курс, чтобы получить сертификат</p>
+            </div>
+          </div>
+
+          <!-- Раздел "Платежи" -->
+          <div class="dashboard-section" id="payments-section">
+            <div class="section-header">
+              <h2>История платежей</h2>
+              <button class="btn btn-outline">
+                <i class="fas fa-download"></i> Выписка
+              </button>
+            </div>
+            
+            <div class="payments-table-container">
+              <table class="payments-table">
+                <thead>
+                  <tr>
+                    <th>Дата</th>
+                    <th>Курс</th>
+                    <th>Сумма</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                  </tr>
+                </thead>
+                <tbody id="payments-table-body">
+                  <!-- Платежи будут загружены через JS -->
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="payment-methods">
+              <h3>Способы оплаты</h3>
+              <div class="methods-list">
+                <div class="method-card active">
+                  <div class="method-icon">
+                    <i class="fab fa-cc-visa"></i>
+                  </div>
+                  <div class="method-info">
+                    <div class="method-name">Visa •••• 1234</div>
+                    <div class="method-expiry">Истекает 12/25</div>
+                  </div>
+                  <button class="method-remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                
+                <button class="method-card add-method">
+                  <div class="method-icon">
+                    <i class="fas fa-plus"></i>
+                  </div>
+                  <div class="method-info">
+                    <div class="method-name">Добавить способ оплаты</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Раздел "Настройки" -->
+          <div class="dashboard-section" id="settings-section">
+            <div class="section-header">
+              <h2>Настройки профиля</h2>
+            </div>
+            
+            <div class="settings-tabs">
+              <button class="settings-tab-btn active" data-settings-tab="profile">Профиль</button>
+              <button class="settings-tab-btn" data-settings-tab="security">Безопасность</button>
+              <button class="settings-tab-btn" data-settings-tab="notifications">Уведомления</button>
+            </div>
+            
+            <!-- Настройки профиля -->
+            <div class="settings-content active" id="profile-settings">
+              <form id="profile-form">
+                <div class="settings-form">
+                  <div class="form-group">
+                    <label>Аватар</label>
+                    <div class="avatar-upload">
+                      <div class="avatar-preview" id="avatar-preview">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="avatar-upload-controls">
+                        <button type="button" class="btn btn-outline" id="upload-avatar">
+                          <i class="fas fa-upload"></i> Загрузить фото
+                        </button>
+                        <p class="avatar-hint">PNG, JPG до 2MB</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profile-name">Имя</label>
+                      <input type="text" id="profile-name" value="Иван">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="profile-surname">Фамилия</label>
+                      <input type="text" id="profile-surname" value="Иванов">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-email">Email</label>
+                    <input type="email" id="profile-email" value="ivan@example.com">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-phone">Телефон</label>
+                    <input type="tel" id="profile-phone" value="+7 (900) 123-45-67">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-bio">О себе</label>
+                    <textarea id="profile-bio" rows="4" placeholder="Расскажите о себе...">Начинающий frontend-разработчик, учусь в CodeStart</textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile-goal">Цель обучения</label>
+                    <select id="profile-goal">
+                      <option value="career" selected>Смена профессии</option>
+                      <option value="skills">Повышение квалификации</option>
+                      <option value="hobby">Хобби/интерес</option>
+                      <option value="startup">Создание стартапа</option>
+                      <option value="freelance">Фриланс</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-save"></i> Сохранить изменения
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Настройки безопасности -->
+            <div class="settings-content" id="security-settings">
+              <form id="security-form">
+                <div class="settings-form">
+                  <h3>Смена пароля</h3>
+                  
+                  <div class="form-group">
+                    <label for="current-password">Текущий пароль</label>
+                    <div class="input-with-icon">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="current-password" placeholder="Введите текущий пароль">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="new-password">Новый пароль</label>
+                    <div class="input-with-icon">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="new-password" placeholder="Введите новый пароль">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="confirm-new-password">Подтвердите новый пароль</label>
+                    <div class="input-with-icon">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" id="confirm-new-password" placeholder="Повторите новый пароль">
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-key"></i> Сменить пароль
+                    </button>
+                  </div>
+                  
+                  <div class="security-section">
+                    <h3>Двухфакторная аутентификация</h3>
+                    <div class="security-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Включить 2FA</div>
+                        <div class="toggle-description">Дополнительная защита вашего аккаунта</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="two-factor-auth">
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="security-section">
+                    <h3>Активные сессии</h3>
+                    <div class="sessions-list" id="sessions-list">
+                      <!-- Сессии будут загружены через JS -->
+                    </div>
+                    <button type="button" class="btn btn-outline" id="logout-all-sessions">
+                      <i class="fas fa-sign-out-alt"></i> Завершить все сессии
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Настройки уведомлений -->
+            <div class="settings-content" id="notifications-settings">
+              <form id="notifications-form">
+                <div class="settings-form">
+                  <h3>Настройки уведомлений</h3>
+                  
+                  <div class="notification-group">
+                    <h4>Email уведомления</h4>
+                    
+                    <div class="notification-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Новые курсы и обновления</div>
+                        <div class="toggle-description">Уведомления о новых курсах и обновлениях материалов</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="notif-new-courses" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="notification-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Прогресс обучения</div>
+                        <div class="toggle-description">Напоминания и отчеты о прогрессе</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="notif-progress" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="notification-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Акции и предложения</div>
+                        <div class="toggle-description">Специальные предложения и скидки</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="notif-promotions" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="notification-group">
+                    <h4>Внутриплатформенные уведомления</h4>
+                    
+                    <div class="notification-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Комментарии и ответы</div>
+                        <div class="toggle-description">Уведомления о новых комментариях</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="notif-comments" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                    
+                    <div class="notification-toggle">
+                      <div class="toggle-info">
+                        <div class="toggle-title">Напоминания о занятиях</div>
+                        <div class="toggle-description">Напоминания о предстоящих уроках</div>
+                      </div>
+                      <label class="switch">
+                        <input type="checkbox" id="notif-reminders" checked>
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-bell"></i> Сохранить настройки
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="footer-brand-name">CodeStart</div>
+          </div>
+          <p class="footer-description">Онлайн-школа программирования с 2020 года.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Аккаунт</h3>
+          <ul class="footer-links">
+            <li><a href="account.html">Личный кабинет</a></li>
+            <li><a href="account.html">Мои курсы</a></li>
+            <li><a href="account.html">Прогресс</a></li>
+            <li><a href="account.html">Сертификаты</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Поддержка</h3>
+          <ul class="footer-links">
+            <li><a href="#">Помощь</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Сообщить о проблеме</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Контакты</h3>
+          <div class="footer-contacts">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:support@codestart.example">support@codestart.example</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2023 CodeStart. Все права защищены.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модальное окно для сброса пароля -->
+  <div class="modal" id="password-reset-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Восстановление пароля</h3>
+        <button class="modal-close" id="reset-modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="password-reset-form">
+          <div class="form-group">
+            <label for="reset-email">Email</label>
+            <input type="email" id="reset-email" placeholder="Введите email для восстановления" required>
+            <p class="form-hint">На этот email будет отправлена ссылка для сброса пароля</p>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-paper-plane"></i> Отправить ссылку
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для добавления курса -->
+  <div class="modal" id="add-course-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Добавить курс</h3>
+        <button class="modal-close" id="add-course-modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="add-course-form">
+          <div class="form-group">
+            <label for="course-code">Код доступа к курсу</label>
+            <input type="text" id="course-code" placeholder="Введите код курса" required>
+            <p class="form-hint">Код курса вы получили после оплаты</p>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-plus"></i> Добавить курс
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

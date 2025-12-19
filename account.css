@@ -1,0 +1,1161 @@
+/* Стили для личного кабинета */
+
+/* Общие стили для страницы аккаунта */
+.account-main {
+  padding: var(--space-xxl) 0;
+  min-height: calc(100vh - 400px);
+}
+
+/* Вкладки регистрации/авторизации */
+.account-tabs {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto var(--space-xl);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--gray-lighter);
+  background-color: var(--white);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tab-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.tab-btn:not(.active):hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Формы авторизации и регистрации */
+.account-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  display: none;
+}
+
+.account-form.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.form-header h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--dark);
+}
+
+.form-header p {
+  color: var(--gray);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Стили для полей ввода с иконками */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 16px;
+  color: var(--gray-light);
+  font-size: var(--font-size-md);
+}
+
+.input-with-icon input,
+.input-with-icon select {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 2px solid var(--gray-lighter);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  transition: all var(--transition);
+}
+
+.input-with-icon input:focus,
+.input-with-icon select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 67, 255, 0.1);
+}
+
+.input-with-icon .password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--gray-light);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  transition: color var(--transition);
+}
+
+.input-with-icon .password-toggle:hover {
+  color: var(--primary);
+}
+
+/* Дополнительные опции формы */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.text-link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.text-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Разделитель */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: var(--space-lg) 0;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--gray-lighter);
+}
+
+.divider span {
+  padding: 0 var(--space-md);
+  color: var(--gray);
+  font-size: var(--font-size-sm);
+}
+
+/* Кнопки социальных сетей */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 12px;
+  border: 2px solid var(--gray-lighter);
+  border-radius: var(--radius-md);
+  background: none;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.social-btn.google {
+  color: #DB4437;
+}
+
+.social-btn.google:hover {
+  border-color: #DB4437;
+  background-color: rgba(219, 68, 55, 0.05);
+}
+
+.social-btn.vk {
+  color: #4C75A3;
+}
+
+.social-btn.vk:hover {
+  border-color: #4C75A3;
+  background-color: rgba(76, 117, 163, 0.05);
+}
+
+.social-btn.github {
+  color: #333;
+}
+
+.social-btn.github:hover {
+  border-color: #333;
+  background-color: rgba(51, 51, 51, 0.05);
+}
+
+/* Индикатор сложности пароля */
+.password-strength {
+  margin-top: var(--space-sm);
+}
+
+.strength-bar {
+  height: 4px;
+  background-color: var(--gray-lighter);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.strength-bar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 20%;
+  background-color: var(--danger);
+  transition: all var(--transition);
+}
+
+.password-strength.medium .strength-bar::before {
+  width: 60%;
+  background-color: var(--warning);
+}
+
+.password-strength.strong .strength-bar::before {
+  width: 100%;
+  background-color: var(--success);
+}
+
+.strength-text {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.strength-text span {
+  font-weight: 600;
+}
+
+.password-strength.weak .strength-text span {
+  color: var(--danger);
+}
+
+.password-strength.medium .strength-text span {
+  color: var(--warning);
+}
+
+.password-strength.strong .strength-text span {
+  color: var(--success);
+}
+
+/* Требования к паролю */
+.password-requirements {
+  list-style: none;
+  margin-top: var(--space-sm);
+  padding: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.password-requirements li::before {
+  content: '✗';
+  margin-right: 8px;
+  color: var(--danger);
+}
+
+.password-requirements li.valid::before {
+  content: '✓';
+  color: var(--success);
+}
+
+/* Индикатор совпадения паролей */
+.password-match {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.password-match.visible {
+  opacity: 1;
+}
+
+.password-match i {
+  font-size: var(--font-size-sm);
+}
+
+/* Чекбокс обязательный */
+.checkbox-label.required::after {
+  content: ' *';
+  color: var(--danger);
+}
+
+/* Личный кабинет (дашборд) */
+.account-dashboard {
+  display: none;
+}
+
+.account-dashboard.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Заголовок кабинета */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--gray-lighter);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: var(--font-size-xxl);
+  flex-shrink: 0;
+}
+
+.user-email {
+  color: var(--gray);
+  margin-bottom: var(--space-md);
+}
+
+.user-stats {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.user-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray);
+}
+
+.user-stats .stat i {
+  color: var(--primary);
+}
+
+.user-stats .stat strong {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Навигация в кабинете */
+.dashboard-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--gray-lighter);
+}
+
+.dashboard-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.dashboard-nav::-webkit-scrollbar-track {
+  background: var(--gray-lighter);
+}
+
+.dashboard-nav::-webkit-scrollbar-thumb {
+  background: var(--gray-light);
+  border-radius: 2px;
+}
+
+.dashboard-nav-btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.dashboard-nav-btn:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.dashboard-nav-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Содержимое разделов */
+.dashboard-section {
+  display: none;
+}
+
+.dashboard-section.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+/* Список курсов пользователя */
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.user-course-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--gray-lighter);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user-course-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.user-course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.user-course-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--dark);
+}
+
+.user-course-meta {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.user-course-progress {
+  flex: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--gray-lighter);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.user-course-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.user-course-actions .btn {
+  flex: 1;
+}
+
+/* Прогресс обучения */
+.progress-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 992px) {
+  .progress-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+.progress-chart {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-container {
+  height: 250px;
+  margin-bottom: var(--space-lg);
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.progress-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.stat-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+@media (max-width: 576px) {
+  .progress-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Последняя активность */
+.recent-activity {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition);
+}
+
+.activity-item:hover {
+  background-color: var(--light);
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.activity-time {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+/* Сертификаты */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.certificate-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  border: 1px solid var(--gray-lighter);
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.certificate-header {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+  padding: var(--space-lg);
+  color: var(--white);
+  text-align: center;
+}
+
+.certificate-icon {
+  font-size: 48px;
+  margin-bottom: var(--space-md);
+}
+
+.certificate-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.certificate-course {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.certificate-body {
+  padding: var(--space-lg);
+}
+
+.certificate-date {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+  margin-bottom: var(--space-md);
+}
+
+.certificate-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.certificate-actions .btn {
+  flex: 1;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-xxl) var(--space-lg);
+}
+
+.empty-icon {
+  font-size: 64px;
+  color: var(--gray-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* История платежей */
+.payments-table-container {
+  overflow-x: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.payments-table th {
+  text-align: left;
+  padding: var(--space-md);
+  background-color: var(--light);
+  color: var(--dark);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gray-lighter);
+}
+
+.payments-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--gray-lighter);
+  vertical-align: middle;
+}
+
+.payments-table tr:hover {
+  background-color: var(--light);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.status-success {
+  background-color: rgba(45, 178, 74, 0.1);
+  color: var(--secondary-dark);
+}
+
+.status-pending {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #b58b00;
+}
+
+.status-failed {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger);
+}
+
+.payment-methods {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.methods-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.method-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 2px solid var(--gray-lighter);
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+  font-family: var(--font-family);
+  text-align: left;
+}
+
+.method-card.active {
+  border-color: var(--primary);
+  background-color: rgba(0, 67, 255, 0.05);
+}
+
+.method-card:hover:not(.add-method) {
+  border-color: var(--primary);
+}
+
+.method-card.add-method {
+  border-style: dashed;
+  color: var(--primary);
+}
+
+.method-card.add-method:hover {
+  background-color: rgba(0, 67, 255, 0.05);
+}
+
+.method-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+}
+
+.method-card.add-method .method-icon {
+  background-color: rgba(0, 67, 255, 0.1);
+  color: var(--primary);
+}
+
+.method-info {
+  flex: 1;
+}
+
+.method-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.method-expiry {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.method-remove {
+  background: none;
+  border: none;
+  color: var(--gray-light);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  transition: color var(--transition);
+}
+
+.method-remove:hover {
+  color: var(--danger);
+}
+
+/* Настройки профиля */
+.settings-tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--gray-lighter);
+}
+
+.settings-tab-btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.settings-tab-btn:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.settings-tab-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.settings-content {
+  display: none;
+}
+
+.settings-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.settings-form {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Загрузка аватара */
+.avatar-upload {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.avatar-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 48px;
+  overflow: hidden;
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-upload-controls {
+  flex: 1;
+}
+
+.avatar-hint {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+  margin-top: var(--space-sm);
+}
+
+/* Переключатели */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray-light);
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Группы настроек */
+.security-section,
+.notification-group {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-lighter);
+}
+
+.security-toggle,
+.notification-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+}
+
+.toggle-info {
+  flex: 1;
+}
+
+.toggle-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.toggle-description {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+/* Активные сессии */
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border: 1px solid var(--gray-lighter);
+  border-radius: var(--radius-md);
+}
+
+.session-info {
+  flex: 1;
+}
+
+.session-device {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.session-details {
+  font-size: var(--font-size-sm);
+  color: var(--gray);
+}
+
+.session-current {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(45, 178, 74, 0.1);
+  color: var(--secondary-dark);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  margin-left: var(--space-sm);
+}
+
+.session-actions button {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  transition: color var(--transition);
+}
+
+.session-actions button:hover {
+  color: #b02a37;
+}
+
+/* Действия формы */
+.form-actions {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: flex-end;
+}

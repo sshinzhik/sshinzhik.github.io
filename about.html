@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас - CodeStart</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="brand-name">CodeStart</div>
+        </div>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="index.html">Главная</a>
+          <a href="courses.html">Курсы</a>
+          <a href="about.html">О нас</a>
+          <a href="#testimonials">Отзывы</a>
+          <a href="#support">Поддержка</a>
+          <a href="account.html" class="nav-highlight">
+            <i class="fas fa-user-circle"></i>
+          </a>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Меню">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero-секция -->
+  <section class="hero about-hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">О школе CodeStart</h1>
+          <p class="hero-description">
+            Мы помогаем людям без IT-опыта освоить программирование и найти первую работу в IT 
+            за 3-9 месяцев. 1500+ студентов уже трудоустроены.
+          </p>
+          <div class="hero-cta">
+            <a href="index.html#courses" class="btn btn-primary">
+              <i class="fas fa-rocket"></i>
+              Посмотреть курсы
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fas fa-info-circle"></i>
+              Связаться с нами
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="about-visual">
+            <div class="team-stats">
+              <div class="stat">
+                <span class="stat-number">1500+</span>
+                <span class="stat-label">Выпускников</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">88%</span>
+                <span class="stat-label">Трудоустроены</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">25</span>
+                <span class="stat-label">Экспертов в команде</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- История школы -->
+  <section class="history-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Наша история</h2>
+        <p class="section-subtitle">CodeStart основана в 2020 году</p>
+      </div>
+      
+      <div class="history-timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <h3>Запуск школы</h3>
+            <p>Первый курс Frontend-разработчик. 50 студентов в группе.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <h3>Расширение</h3>
+            <p>Добавлены курсы Python, 1C, Fullstack. Первый выпуск 120 человек.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h3>Профессии</h3>
+            <p>Запуск полноценных профессий с гарантией трудоустройства.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <h3>Масштабирование</h3>
+            <p>1500+ студентов. Открытие офиса в центре города.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">
+            <h3>Сегодня</h3>
+            <p>88% трудоустройство. Рейтинг 4.9 на платформах отзывов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Философия -->
+  <section class="philosophy-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Наша философия</h2>
+        <p class="section-subtitle">Практика • Результат • Карьера</p>
+      </div>
+      
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="philosophy-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3>Индивидуальный подход</h3>
+          <p>Ментор для каждого студента. Еженедельные созвоны и обратная связь.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="philosophy-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Гарантия работы</h3>
+          <p>Возврат денег, если не устроились за 3 месяца после курса.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="philosophy-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Сообщество</h3>
+          <p>Чат выпускников, митапы, нетворкинг с работодателями.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Команда -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Наша команда</h2>
+        <p class="section-subtitle">25 экспертов IT-индустрии</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Анна Иванова">
+          </div>
+          <h4>Анна Иванова</h4>
+          <p>CEO & Основатель</p>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Максим Петров">
+          </div>
+          <h4>Максим Петров</h4>
+          <p>Lead Frontend</p>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=120&h=120&fit=crop&crop=face" alt="Елена Смирнова">
+          </div>
+          <h4>Елена Смирнова</h4>
+          <p>Lead Backend</p>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face" alt="Дмитрий Козлов">
+          </div>
+          <h4>Дмитрий Козлов</h4>
+          <p>HR & Карьера</p>
+          <div class="team-social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#contact" class="btn btn-primary">Вся команда <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="contacts-section" id="contact">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <p class="section-subtitle">Готовы ответить на все вопросы</p>
+      </div>
+      
+      <div class="contacts-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Офис</h4>
+              <p>г. Москва, ул. Тверская, д. 12<br>м. Тверская (1 мин.)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4>Телефон</h4>
+              <p><a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@codestart.ru">info@codestart.ru</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Режим работы</h4>
+              <p>Пн-Пт: 9:00-21:00<br>Сб-Вс: 10:00-18:00</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-map">
+          <div class="contact-map">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ&lang=ru_RU" type="text/javascript"></script>
+  <div id="map" style="width: 100%; height: 400px; border-radius: 16px;"></div>
+  <script>
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map("map", {
+        center: [55.753994, 37.622093], // Москва, Тверская
+        zoom: 16
+      });
+      
+      var myPlacemark = new ymaps.Placemark([55.753994, 37.622093], {
+        hintContent: 'CodeStart',
+        balloonContent: 'г. Москва, ул. Тверская, д. 12'
+      });
+      
+      myMap.geoObjects.add(myPlacemark);
+    });
+  </script>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Призыв к действию -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Готовы начать обучение?</h2>
+        <p>Запишитесь на пробный урок бесплатно</p>
+        <div class="cta-buttons">
+          <a href="index.html#courses" class="btn btn-primary btn-large">
+            <i class="fas fa-rocket"></i> Выбрать курс
+          </a>
+          <a href="#contact" class="btn btn-outline btn-large">
+            <i class="fas fa-phone"></i> Позвонить
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал сайта -->
+  <footer class="footer" id="support">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo"><i class="fas fa-code"></i></div>
+            <div class="footer-brand-name">CodeStart</div>
+          </div>
+          <p class="footer-description">Школа программирования с гарантией трудоустройства. С 2020 года.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Курсы</h3>
+          <ul class="footer-links">
+            <li><a href="#">Frontend</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Fullstack</a></li>
+            <li><a href="#">1C разработчик</a></li>
+            <li><a href="#">Профессии</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Компания</h3>
+          <ul class="footer-links">
+            <li><a href="\about.html">О нас</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Поддержка</h3>
+          <div class="footer-contacts">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div class="contact-label">+7 (123) 456-78-90</div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div class="contact-label">info@codestart.ru</div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>Пн-Пт 9:00-21:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2023 CodeStart. Все права защищены.
+        </div>
+        <div class="footer-legal">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Условия использования</a>
+          <a href="#">Договор оферты</a>
+        </div>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="MasterCard"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+          <i class="fas fa-credit-card" title="Кредитные карты"></i>
+        </div>
+      </div>
+      <div class="footer-back-to-top">
+        <button id="back-to-top" class="btn btn-outline">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="\script.js"></script>
+</body>
+</html>
